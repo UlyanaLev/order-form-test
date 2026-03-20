@@ -1,0 +1,54 @@
+.banner {
+  width: 100%;
+  min-height: 850px;
+  padding: 100px 0;
+  position: relative;
+
+  background-image: url("../img/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__content {
+    margin-top: 203px;
+  }
+
+  &__title {
+    max-width: 780px;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 80px;
+    & span {
+      color: #42a9ed;
+    }
+  }
+
+  &__description p {
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 80px;
+  }
+
+  &__actions {
+    gap: 30px;
+  }
+
+  @include mobile {
+    min-height: auto;
+    padding: 60px 0;
+    background-position: left center;
+  }
+}

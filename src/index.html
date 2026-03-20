@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <title>LOREMIPSUM</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrap">
+          <div class="logo">
+            <a href="#" class="logo__link">LOREMIPSUM.<span>NET</span></a>
+          </div>
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="#features" class="navigation__link">Бизнес</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#works" class="navigation__link">О нас</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#our_team" class="navigation__link">Цены</a>
+              </li>
+              <li class="navigation__item">
+                <a href="#testimonials" class="navigation__link"
+                  >Оформить заказ</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="container">
+          <div class="banner__content">
+            <h1 class="banner__title">
+              <span>Lorem ipsum</span> dolor sit amet consectetur
+              <span>adipiscing</span>
+            </h1>
+            <div class="banner__description">
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
+              <ul class="banner__list">
+                <li>- Totam rem aperiam eaque ipsa</li>
+                <li>- Sit voluptatem accusantium doloremque laudantium</li>
+                <li>- Sed ut perspiciatis, unde omnis iste natus error</li>
+              </ul>
+            </div>
+            <div class="banner__actions">
+              <button class="button button--primary">ЗАКАЗАТЬ</button>
+              <button class="button button--secondary">ПОДРОБНЕЕ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="order" id="testimonials">
+        <div class="container">
+          <div class="order__text">
+            <h2 class="order__title">ОФОРМЛЕНИЕ<span> ЗАКАЗА</span></h2>
+            <p class="order__subtitle">
+              Перед заполнением формы ознакомьтесь с нашей схемой работы!
+            </p>
+          </div>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__icon-wrapper">
+                <img src="./img/search.svg" alt="" class="steps__icon" />
+              </div>
+              <p class="steps__text">Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+
+          <form action="#" class="form order__form">
+            <div class="form__row">
+              <select name="system_type" class="form__select">
+                <option value="">Выберите тип системы</option>
+                <option value="type1">Тип 1</option>
+              </select>
+              <input
+                type="email"
+                name="email"
+                class="form__input"
+                placeholder="Ваш e-mail"
+                required
+              />
+              <input
+                type="text"
+                name="username"
+                class="form__input"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+
+            <div class="form__bottom">
+              <div class="form__range-wrap"></div>
+              <div class="form__file">
+                <input
+                  type="file"
+                  name="file"
+                  id="file-upload"
+                  class="form__file-input"
+                />
+                <label for="file-upload" class="form__file-label"
+                  >ПРИКРЕПИТЬ ФАЙЛ</label
+                >
+              </div>
+            </div>
+
+            <button type="submit" class="button button--submit">
+              ОТПРАВИТЬ
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__info">
+            <p>© 2018 «LoremIpsum.net» Все права защищены.</p>
+          </div>
+
+          <div class="footer__payments">
+            <ul class="payment-list">
+              <li class="payment-list__item">Qiwi</li>
+              <li class="payment-list__item">WebMoney</li>
+            </ul>
+          </div>
+
+          <div class="footer__contacts">
+            <a href="mailto:info@loremipsum.net" class="footer__link"
+              >info@loremipsum.net</a
+            >
+            <a href="https://vk.com" class="footer__link">Мы вконтакте</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

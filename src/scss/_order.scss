@@ -1,0 +1,24 @@
+.order {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  &__title {
+    font-family: Lato;
+    font-weight: 900;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    & span {
+      color: #3e9cdc;
+    }
+  }
+  &__subtitle {
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 18px;
+    color: #bbbbbb;
+  }
+}

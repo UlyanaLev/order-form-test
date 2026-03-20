@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  z-index: 1000;
+  background-color: #10101d;
+  padding: 20px 0;
+  min-height: 100px;
+  align-content: center;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  &__link {
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  & span {
+    color: #42a9ed;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__item {
+    text-transform: uppercase;
+    margin-left: 60px;
+  }
+}

@@ -1,0 +1,35 @@
+body {
+  font-family: $font-main;
+  color: $color-white;
+  background-color: #272733;
+}
+
+.container {
+  max-width: 1172px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 31.48px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s;
+
+  &:hover {
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    border: 1px solid $color-white;
+  }
+
+  &--secondary {
+    background-color: #ffffff;
+    border: 1px solid #6f6d7b;
+  }
+}
