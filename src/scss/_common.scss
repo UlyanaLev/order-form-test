@@ -29,7 +29,12 @@ body {
   }
 
   &--secondary {
-    background-color: #ffffff;
+    background-color: $color-white;
     border: 1px solid #6f6d7b;
+  }
+
+  &--submit {
+    background-color: $color-primary;
+    border: 1px solid $color-white;
   }
 }

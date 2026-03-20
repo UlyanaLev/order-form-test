@@ -67,6 +67,7 @@
               Перед заполнением формы ознакомьтесь с нашей схемой работы!
             </p>
           </div>
+
           <div class="steps">
             <div class="steps__item">
               <div class="steps__icon-wrapper">
@@ -74,14 +75,68 @@
               </div>
               <p class="steps__text">Lorem ipsum dolor sit amet</p>
             </div>
+            <div class="steps__item">
+              <div class="steps__icon-wrapper">
+                <img src="./img/percent.svg" alt="" class="steps__icon" />
+              </div>
+              <p class="steps__text">Сonsecteturadipiscing elit</p>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon-wrapper">
+                <img src="./img/file.svg" alt="" class="steps__icon" />
+              </div>
+              <p class="steps__text">Sed do eiusmod tempor</p>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon-wrapper">
+                <img src="./img/message.svg" alt="" class="steps__icon" />
+              </div>
+              <p class="steps__text">Esse cillum dolore eu fugiat</p>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon-wrapper">
+                <img src="./img/money.svg" alt="" class="steps__icon" />
+              </div>
+              <p class="steps__text">
+                Excepteur sint occaecat cupidatat non proident
+              </p>
+            </div>
           </div>
 
           <form action="#" class="form order__form">
             <div class="form__row">
-              <select name="system_type" class="form__select">
-                <option value="">Выберите тип системы</option>
-                <option value="type1">Тип 1</option>
-              </select>
+              <div class="custom-select" id="system-select">
+                <div class="custom-select__header">
+                  <span class="custom-select__current"
+                    >Выберите тип системы</span
+                  >
+                  <div class="custom-select__icon"></div>
+                </div>
+                <ul class="custom-select__list">
+                  <li class="custom-select__item" data-value="sed">
+                    Sed ut perspiciatis
+                  </li>
+                  <li class="custom-select__item" data-value="nemo">
+                    Nemo enim ipsam
+                  </li>
+                  <li class="custom-select__item" data-value="harum">
+                    Et harum quidem
+                  </li>
+                  <li class="custom-select__item" data-value="temporibus">
+                    Temporibus autem
+                  </li>
+                  <li class="custom-select__item" data-value="itaque">
+                    Itaque earum rerum
+                  </li>
+                </ul>
+                <input
+                  type="hidden"
+                  name="system_type"
+                  id="system_type_input"
+                  value=""
+                />
+              </div>
+
               <input
                 type="email"
                 name="email"
@@ -99,7 +154,24 @@
             </div>
 
             <div class="form__bottom">
-              <div class="form__range-wrap"></div>
+              <div class="form__range-wrap">
+                <div class="form__range-info">
+                  <span class="form__range-text"
+                    >Sed ut perspiciatis, unde omnis iste natus</span
+                  >
+                  <span class="form__range-percent" id="range-value">75%</span>
+                </div>
+                <input
+                  type="range"
+                  name="range"
+                  min="0"
+                  max="100"
+                  value="75"
+                  class="form__range"
+                  id="range-input"
+                />
+              </div>
+
               <div class="form__file">
                 <input
                   type="file"
@@ -107,9 +179,14 @@
                   id="file-upload"
                   class="form__file-input"
                 />
-                <label for="file-upload" class="form__file-label"
-                  >ПРИКРЕПИТЬ ФАЙЛ</label
-                >
+                <label for="file-upload" class="form__file-label">
+                  <img
+                    src="./img/file-icon.svg"
+                    alt=""
+                    class="form__file-icon"
+                  />
+                  ПРИКРЕПИТЬ ФАЙЛ
+                </label>
               </div>
             </div>
 
@@ -125,24 +202,37 @@
       <div class="container">
         <div class="footer__wrap">
           <div class="footer__info">
-            <p>© 2018 «LoremIpsum.net» Все права защищены.</p>
+            <p>© 2018 «LOREMIPSUM.NET» Все права защищены.</p>
           </div>
 
           <div class="footer__payments">
             <ul class="payment-list">
-              <li class="payment-list__item">Qiwi</li>
-              <li class="payment-list__item">WebMoney</li>
+              <li class="payment-list__item payment-list__item--qiwi">
+                QIWI wallet
+              </li>
+              <li class="payment-list__item payment-list__item--yandex">
+                Yandex Money
+              </li>
+              <li class="payment-list__item payment-list__item--wm">
+                Web Money
+              </li>
             </ul>
           </div>
 
           <div class="footer__contacts">
-            <a href="mailto:info@loremipsum.net" class="footer__link"
-              >info@loremipsum.net</a
+            <a
+              href="mailto:info@loremipsum.net"
+              class="footer__link footer__link--email"
+              >info@ipsum228.com</a
             >
-            <a href="https://vk.com" class="footer__link">Мы вконтакте</a>
+            <a href="https://vk.com" class="footer__link footer__link--vk"
+              >Мы вконтакте</a
+            >
           </div>
         </div>
       </div>
     </footer>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
