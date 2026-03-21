@@ -24,18 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const select = document.querySelector(".custom-select");
   const hiddenInput = document.querySelector("#system_type_input");
   const currentText = document.querySelector(".custom-select__current");
+  const selectItems = document.querySelectorAll(".custom-select__item");
 
   if (select) {
+    selectItems.forEach((item) => {
+      item.setAttribute("tabindex", "0");
+    });
+
+    const handleSelectAction = (item) => {
+      currentText.textContent = item.textContent.trim();
+      if (hiddenInput) hiddenInput.value = item.dataset.value;
+      select.classList.remove("custom-select--open");
+    };
+
     select.addEventListener("click", (e) => {
       const header = e.target.closest(".custom-select__header");
       const item = e.target.closest(".custom-select__item");
 
       if (header) select.classList.toggle("custom-select--open");
+      if (item) handleSelectAction(item);
+    });
 
-      if (item) {
-        currentText.textContent = item.textContent.trim();
-        if (hiddenInput) hiddenInput.value = item.dataset.value;
-        select.classList.remove("custom-select--open");
+    select.addEventListener("keydown", (e) => {
+      const item = e.target.closest(".custom-select__item");
+      if (item && e.key === "Enter") {
+        handleSelectAction(item);
       }
     });
 

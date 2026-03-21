@@ -9,7 +9,7 @@
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ulyana Levchuk",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
