@@ -1,0 +1,196 @@
+.form {
+  &__row {
+    @include flex(center, center, wrap);
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+
+    & > * {
+      flex: 0 1 $input-width;
+      height: $input-height;
+    }
+  }
+
+  &__input {
+    @include form-el;
+    padding: 0 15px;
+    color: $color-bg-light;
+
+    &::placeholder {
+      color: $color-bg-light;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-white;
+    }
+  }
+
+  &__bottom {
+    @include flex(space-between, flex-end);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__range-wrap {
+    flex: 1 1 770px;
+    width: 100%;
+    max-width: 770px;
+  }
+
+  &__range-info {
+    @include flex(space-between);
+    margin-bottom: 10px;
+    @include text(18px, 400, $color-white);
+  }
+
+  &__range {
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba($color-white, 0.7);
+    border-radius: 5px;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px;
+      height: 28px;
+      background: $color-primary;
+      border: 3px solid #286690;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  &__file {
+    flex: 0 1 $input-width;
+    height: $input-height;
+    position: relative;
+
+    &-input {
+      display: none;
+    }
+
+    &-label {
+      @include flex;
+      @include form-el;
+      background-color: $color-white;
+      border: 2px solid $color-primary;
+      color: $color-bg-light;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &--submit {
+    @include form-el;
+    @include flex;
+    display: block;
+    margin: 0 auto;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
+    }
+  }
+
+  @include media-lg {
+    &__row,
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__row > *,
+    &__range-wrap,
+    &__file,
+    &--submit {
+      width: 100%;
+      max-width: $input-width;
+      flex: 0 0 $input-height;
+    }
+  }
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: $input-height;
+
+  &__header {
+    @include flex(space-between);
+    @include form-el;
+    padding: 0 15px;
+    color: $color-bg-light;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-white;
+    }
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    margin-bottom: 4px;
+    transition: $transition;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $color-bg-light;
+    border: 1px solid $color-primary;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    padding: 12px 15px;
+    @include text(18px, 400, $color-white);
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-white, 0.05);
+    }
+  }
+
+  &--open {
+    .custom-select__list {
+      display: block;
+    }
+    .custom-select__icon {
+      transform: rotate(135deg);
+      margin-bottom: -4px;
+    }
+  }
+}

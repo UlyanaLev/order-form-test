@@ -1,0 +1,84 @@
+.steps {
+  @include flex(space-between, flex-start);
+  gap: 30px;
+  margin-bottom: 80px;
+
+  &__item {
+    @include flex(flex-start, center);
+    flex-direction: column;
+    text-align: center;
+    flex: 0 1 209px;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: calc(50% + 56px);
+      width: 120px;
+      height: 6px;
+      background-image: radial-gradient(circle, #c4c4c4 3px, transparent 3px);
+      background-size: 26px 6px;
+      background-repeat: repeat-x;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+
+  &__icon-wrapper {
+    @include flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    border: 5px solid #286690;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  &__icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+  }
+
+  &__text {
+    @include text(16px, 400, $color-white);
+    margin: 0;
+  }
+
+  @include media-xl {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 20px;
+
+    &__item {
+      flex-basis: 200px;
+
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+  }
+
+  @include media-md {
+    &__item {
+      flex: 0 1 45%;
+      max-width: 250px;
+    }
+  }
+
+  @include media-sm {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    &__item {
+      flex: 0 1 auto;
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}

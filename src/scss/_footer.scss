@@ -1,0 +1,135 @@
+.footer {
+  background-color: $color-bg-footer;
+  min-height: 80px;
+  padding: 20px 0;
+  @include text(13px, 400, $color-white);
+  display: flex;
+  align-items: center;
+
+  &__wrap {
+    @include flex(space-between, center, wrap);
+    gap: 40px;
+    width: 100%;
+  }
+
+  &__info {
+    @include flex;
+    gap: 4px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__payments {
+    @include flex;
+    flex: 1;
+    gap: 40px;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 1px;
+      height: 18px;
+      background-color: #c3c3c3;
+      flex-shrink: 0;
+    }
+  }
+
+  &__contacts {
+    @include flex;
+    gap: 40px;
+  }
+
+  &__link {
+    @include flex;
+    color: $color-white;
+    transition: $transition;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      background: no-repeat center / contain;
+      flex-shrink: 0;
+    }
+
+    &--email::before {
+      background-image: url("../img/mail-icon.svg");
+    }
+    &--vk::before {
+      background-image: url("../img/vk-icon.svg");
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include media-xl {
+    &__payments {
+      order: 3;
+      width: 100%;
+      flex: none;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    &__wrap {
+      justify-content: center;
+    }
+  }
+
+  @include media-md {
+    padding: 30px 0;
+
+    &__wrap {
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    &__contacts {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}
+
+.payment-list {
+  @include flex;
+  gap: 40px;
+
+  &__item {
+    @include flex;
+    color: #c3c3c3;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      background: no-repeat center / contain;
+      flex-shrink: 0;
+    }
+
+    &--qiwi::before {
+      background-image: url("../img/qiwi-icon.svg");
+    }
+    &--yandex::before {
+      background-image: url("../img/yandex.svg");
+    }
+    &--wm::before {
+      background-image: url("../img/wm-icon.svg");
+    }
+  }
+
+  @include media-md {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+  }
+}
