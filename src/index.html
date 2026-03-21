@@ -3,40 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/style.scss" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>LOREMIPSUM</title>
+
+    <link rel="stylesheet" href="./scss/style.scss" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header__wrap">
-          <div class="logo">
-            <a href="#" class="logo__link">LOREMIPSUM.<span>NET</span></a>
-          </div>
+          <a href="/" class="logo" aria-label="Главная">
+            LOREMIPSUM.<span>NET</span>
+          </a>
+
           <nav class="navigation">
             <ul class="navigation__list">
               <li class="navigation__item">
-                <a href="#features" class="navigation__link">Бизнес</a>
+                <a href="#business" class="navigation__link">Бизнес</a>
               </li>
               <li class="navigation__item">
-                <a href="#works" class="navigation__link">О нас</a>
+                <a href="#about" class="navigation__link">О нас</a>
               </li>
               <li class="navigation__item">
-                <a href="#our_team" class="navigation__link">Цены</a>
+                <a href="#prices" class="navigation__link">Цены</a>
               </li>
               <li class="navigation__item">
-                <a href="#testimonials" class="navigation__link"
-                  >Оформить заказ</a
-                >
+                <a href="#order" class="navigation__link">Оформить заказ</a>
               </li>
             </ul>
           </nav>
+
+          <button type="button" class="burger" aria-label="Открыть меню">
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="banner">
+      <section class="banner" id="business">
         <div class="container">
           <div class="banner__content">
             <h1 class="banner__title">
@@ -46,23 +51,23 @@
             <div class="banner__description">
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
               <ul class="banner__list">
-                <li>- Totam rem aperiam eaque ipsa</li>
-                <li>- Sit voluptatem accusantium doloremque laudantium</li>
-                <li>- Sed ut perspiciatis, unde omnis iste natus error</li>
+                <li>Totam rem aperiam eaque ipsa</li>
+                <li>Sit voluptatem accusantium doloremque laudantium</li>
+                <li>Sed ut perspiciatis, unde omnis iste natus error</li>
               </ul>
             </div>
             <div class="banner__actions">
-              <button class="button button--primary">ЗАКАЗАТЬ</button>
-              <button class="button button--secondary">ПОДРОБНЕЕ</button>
+              <a href="#order" class="button button--primary">Заказать</a>
+              <a href="#about" class="button button--secondary">Подробнее</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="order" id="testimonials">
+      <section class="order" id="order">
         <div class="container">
           <div class="order__text">
-            <h2 class="order__title">ОФОРМЛЕНИЕ<span> ЗАКАЗА</span></h2>
+            <h2 class="order__title">Оформление <span>заказа</span></h2>
             <p class="order__subtitle">
               Перед заполнением формы ознакомьтесь с нашей схемой работы!
             </p>
@@ -71,31 +76,61 @@
           <div class="steps">
             <div class="steps__item">
               <div class="steps__icon-wrapper">
-                <img src="./img/search.svg" alt="" class="steps__icon" />
+                <img
+                  src="./img/search.svg"
+                  alt="Поиск"
+                  class="steps__icon"
+                  width="20"
+                  height="20"
+                />
               </div>
               <p class="steps__text">Lorem ipsum dolor sit amet</p>
             </div>
             <div class="steps__item">
               <div class="steps__icon-wrapper">
-                <img src="./img/percent.svg" alt="" class="steps__icon" />
+                <img
+                  src="./img/percent.svg"
+                  alt="Процент"
+                  class="steps__icon"
+                  width="20"
+                  height="20"
+                />
               </div>
-              <p class="steps__text">Сonsecteturadipiscing elit</p>
+              <p class="steps__text">Сonsectetur adipiscing elit</p>
             </div>
             <div class="steps__item">
               <div class="steps__icon-wrapper">
-                <img src="./img/file.svg" alt="" class="steps__icon" />
+                <img
+                  src="./img/file.svg"
+                  alt="Договор"
+                  class="steps__icon"
+                  width="20"
+                  height="20"
+                />
               </div>
               <p class="steps__text">Sed do eiusmod tempor</p>
             </div>
             <div class="steps__item">
               <div class="steps__icon-wrapper">
-                <img src="./img/message.svg" alt="" class="steps__icon" />
+                <img
+                  src="./img/message.svg"
+                  alt="Сообщение"
+                  class="steps__icon"
+                  width="20"
+                  height="20"
+                />
               </div>
               <p class="steps__text">Esse cillum dolore eu fugiat</p>
             </div>
             <div class="steps__item">
               <div class="steps__icon-wrapper">
-                <img src="./img/money.svg" alt="" class="steps__icon" />
+                <img
+                  src="./img/money.svg"
+                  alt="Оплата"
+                  class="steps__icon"
+                  width="20"
+                  height="20"
+                />
               </div>
               <p class="steps__text">
                 Excepteur sint occaecat cupidatat non proident
@@ -103,15 +138,15 @@
             </div>
           </div>
 
-          <form action="#" class="form order__form">
+          <form action="#" method="POST" class="form order__form">
             <div class="form__row">
               <div class="custom-select" id="system-select">
-                <div class="custom-select__header">
+                <button type="button" class="custom-select__header">
                   <span class="custom-select__current"
                     >Выберите тип системы</span
                   >
-                  <div class="custom-select__icon"></div>
-                </div>
+                  <span class="custom-select__icon"></span>
+                </button>
                 <ul class="custom-select__list">
                   <li class="custom-select__item" data-value="sed">
                     Sed ut perspiciatis
@@ -184,14 +219,16 @@
                     src="./img/file-icon.svg"
                     alt=""
                     class="form__file-icon"
+                    width="20"
+                    height="20"
                   />
-                  ПРИКРЕПИТЬ ФАЙЛ
+                  Прикрепить файл
                 </label>
               </div>
             </div>
 
             <button type="submit" class="button button--submit">
-              ОТПРАВИТЬ
+              Отправить
             </button>
           </form>
         </div>
@@ -202,7 +239,8 @@
       <div class="container">
         <div class="footer__wrap">
           <div class="footer__info">
-            <p>© 2018 «LOREMIPSUM.NET» Все права защищены.</p>
+            <p class="footer__copy">© 2026 «LOREMIPSUM.NET»</p>
+            <p class="footer__copy">Все права защищены.</p>
           </div>
 
           <div class="footer__payments">
@@ -225,7 +263,11 @@
               class="footer__link footer__link--email"
               >info@ipsum228.com</a
             >
-            <a href="https://vk.com" class="footer__link footer__link--vk"
+            <a
+              href="https://vk.com"
+              class="footer__link footer__link--vk"
+              target="_blank"
+              rel="noopener noreferrer"
               >Мы вконтакте</a
             >
           </div>
@@ -233,6 +275,6 @@
       </div>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
   </body>
 </html>

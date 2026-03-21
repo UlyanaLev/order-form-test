@@ -2,35 +2,59 @@
   background-image: url("../img/order-mask.svg");
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% auto;
-  padding-top: 124px;
-  padding-bottom: 147px;
+  background-size: 100% 100%;
+  padding: 120px 0 150px;
 
   &__text {
-    display: flex;
+    @include flex(center, center);
     flex-direction: column;
-    align-items: center;
     margin-bottom: 80px;
     text-align: center;
   }
 
   &__title {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    color: #ffffff;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
+    @include text(36px, 900, $color-white);
     text-transform: uppercase;
 
     span {
-      color: #3e9cdc;
+      color: $color-primary;
     }
   }
 
   &__subtitle {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: #bbbbbb;
+    @include text(18px, 400, $color-gray);
+  }
+
+  @include media-lg {
+    padding: 80px 0;
+    background-size: cover;
+
+    &__text {
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  @include media-md {
+    padding: 60px 0;
+
+    &__title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+  }
+
+  @include media-sm {
+    &__title {
+      font-size: 22px;
+    }
   }
 }

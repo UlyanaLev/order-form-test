@@ -1,18 +1,55 @@
-// _mixins.scss
-@mixin mobile {
-  @media (max-width: 767px) {
+// Медиазапросы (упрощенные)
+@mixin media-xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+@mixin media-md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+@mixin media-sm {
+  @media (max-width: $sm) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 1023px) {
-    @content;
-  }
+// Flexbox
+@mixin flex($justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
 }
 
-@mixin desktop {
-  @media (min-width: 1024px) {
-    @content;
-  }
+// Миксин для элементов формы
+@mixin form-el {
+  width: 100%;
+  max-width: $input-width;
+  height: $input-height;
+  border-radius: 3px;
+  border: 1px solid $color-white;
+  background-color: rgba($color-white, 0.85);
+  font-size: 18px;
+  transition: $transition;
+  box-sizing: border-box;
+  outline: none;
+}
+
+// Текст
+@mixin text($size, $weight: 400, $color: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Фон
+@mixin bg($path, $size: cover, $pos: center) {
+  background: url($path) no-repeat $pos / $size;
 }

@@ -1,37 +1,41 @@
 .steps {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 50px;
+  @include flex(space-between, flex-start);
+  gap: 30px;
   margin-bottom: 80px;
 
-  @include mobile {
-    flex-direction: column;
-    gap: 40px;
-  }
-
   &__item {
-    display: flex;
+    @include flex(flex-start, center);
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    max-width: 209px;
-    flex: 1;
+    flex: 0 1 209px;
     position: relative;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: calc(50% + 56px);
+      width: 120px;
+      height: 6px;
+      background-image: radial-gradient(circle, #c4c4c4 3px, transparent 3px);
+      background-size: 26px 6px;
+      background-repeat: repeat-x;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
   }
 
   &__icon-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #3e9cdc;
+    background-color: $color-primary;
     border: 5px solid #286690;
     position: relative;
     z-index: 2;
     margin-bottom: 20px;
+    box-sizing: border-box;
   }
 
   &__icon {
@@ -41,33 +45,40 @@
   }
 
   &__text {
-    font-family: "Lato";
-    font-weight: 400;
-    font-size: 16px;
-    color: #ffffff;
-    max-width: 200px;
+    @include text(16px, 400, $color-white);
+    margin: 0;
   }
 
-  &__item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    left: calc(50% + 60px);
-    width: 110px;
-    height: 6px;
-    transform: translateY(-50%);
-    background-image: repeating-linear-gradient(
-      to right,
-      #c4c4c4,
-      #c4c4c4 6px,
-      transparent 6px,
-      transparent 26px
-    );
-    background-repeat: no-repeat;
-    z-index: 1;
+  @include media-xl {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 20px;
 
-    @include mobile {
-      display: none;
+    &__item {
+      flex-basis: 200px;
+
+      &:not(:last-child)::after {
+        display: none;
+      }
+    }
+  }
+
+  @include media-md {
+    &__item {
+      flex: 0 1 45%;
+      max-width: 250px;
+    }
+  }
+
+  @include media-sm {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    &__item {
+      flex: 0 1 auto;
+      width: 100%;
+      max-width: 280px;
     }
   }
 }
