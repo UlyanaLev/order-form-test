@@ -17,21 +17,27 @@ body {
 }
 
 .button {
-  @include flex;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border: 1px solid transparent;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
   cursor: pointer;
   transition: $transition;
   text-align: center;
   box-sizing: border-box;
+  text-decoration: none;
+  font-family: $font-main;
 
   &--primary {
     background-color: $color-primary;
     color: $color-white;
-    border: 1px solid $color-white;
-    padding: 15px 30px;
+    border-color: #ffffff;
 
     &:hover {
       background-color: darken($color-primary, 10%);
@@ -39,36 +45,36 @@ body {
   }
 
   &--secondary {
-    background-color: $color-white;
-    color: $color-bg-light;
-    border: 1px solid $color-border;
-    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #2a2b30;
+    border-color: #6f6d7b;
 
     &:hover {
-      background-color: darken($color-white, 5%);
+      background-color: darken(#ffffff, 5%);
     }
   }
 
-  &--submit {
-    @include form-el;
-    @include flex;
-    margin: 40px auto 0;
-    background-color: $color-primary;
-    color: $color-white;
-    font-size: 15px;
-    font-weight: 600;
+  &--small {
+    min-width: 183px;
+  }
 
-    &:hover {
-      background-color: darken($color-primary, 10%);
-    }
+  &--wide {
+    min-width: 370px;
+    padding: 17px 30px;
+  }
+
+  &--submit {
+    display: flex;
+    margin: 25px auto 0;
   }
 
   @include media-md {
     padding: 12px 20px;
     font-size: 12px;
+    min-width: 100%;
 
     &--submit {
-      margin-top: 30px;
+      margin-top: 20px;
     }
   }
 }

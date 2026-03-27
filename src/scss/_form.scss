@@ -1,20 +1,22 @@
 .form {
   &__row {
-    @include flex(center, center, wrap);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 30px;
     width: 100%;
-
-    & > * {
-      flex: 0 1 $input-width;
-      height: $input-height;
-    }
   }
 
   &__input {
     @include form-el;
+    flex: 1 1 340px;
+    max-width: 370px;
+    height: $input-height;
     padding: 0 15px;
     color: $color-bg-light;
+    box-sizing: border-box;
 
     &::placeholder {
       color: $color-bg-light;
@@ -27,24 +29,57 @@
   }
 
   &__bottom {
-    @include flex(space-between, flex-end);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
-  &__range-wrap {
-    flex: 1 1 770px;
-    width: 100%;
-    max-width: 770px;
+  @include media-lg {
+    &__row {
+      gap: 20px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__input {
+      flex: 1 1 340px;
+      max-width: 370px;
+    }
   }
 
-  &__range-info {
-    @include flex(space-between);
-    margin-bottom: 10px;
+  @include media-md {
+    &__row {
+      flex-direction: column;
+    }
+
+    &__input {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 100%;
+      height: $input-height;
+    }
+  }
+}
+
+.range-slider {
+  flex: 1 1 770px;
+  width: 100%;
+  max-width: 770px;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
     @include text(18px, 400, $color-white);
   }
 
-  &__range {
+  &__input {
     appearance: none;
     width: 100%;
     height: 6px;
@@ -53,94 +88,80 @@
     outline: none;
 
     &::-webkit-slider-thumb {
-      -webkit-appearance: none;
+      appearance: none;
       width: 28px;
       height: 28px;
       background: $color-primary;
       border: 3px solid #286690;
       border-radius: 50%;
       cursor: pointer;
-    }
-  }
-
-  &__file {
-    flex: 0 1 $input-width;
-    height: $input-height;
-    position: relative;
-
-    &-input {
-      display: none;
+      transition: $transition;
     }
 
-    &-label {
-      @include flex;
-      @include form-el;
-      background-color: $color-white;
-      border: 2px solid $color-primary;
-      color: $color-bg-light;
-      font-weight: 600;
-      font-size: 15px;
-      text-transform: uppercase;
+    &::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      background: $color-primary;
+      border: 3px solid #286690;
+      border-radius: 50%;
       cursor: pointer;
-
-      &:hover {
-        background-color: $color-primary;
-        color: $color-white;
-      }
-
-      img {
-        margin-right: 10px;
-      }
-    }
-  }
-
-  &--submit {
-    @include form-el;
-    @include flex;
-    display: block;
-    margin: 0 auto;
-    background-color: $color-primary;
-    color: $color-white;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($color-primary, 5%);
+      transition: $transition;
     }
   }
 
   @include media-lg {
-    &__row,
-    &__bottom {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+    flex: 1 1 100%;
+    order: -1;
+  }
 
-    &__row > *,
-    &__range-wrap,
-    &__file,
-    &--submit {
-      width: 100%;
-      max-width: $input-width;
-      flex: 0 0 $input-height;
-    }
+  @include media-md {
+    max-width: 100%;
+  }
+}
+
+.file-upload {
+  width: 100%;
+  max-width: 370px;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    width: 100%;
+    height: $input-height;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  @include media-md {
+    flex: 0 0 auto;
+    height: $input-height;
+    max-width: 100%;
   }
 }
 
 .custom-select {
   position: relative;
+  flex: 1 1 340px;
   width: 100%;
+  max-width: 370px;
   height: $input-height;
 
   &__header {
-    @include flex(space-between);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     @include form-el;
+    max-width: 100%;
+    height: 100%;
     padding: 0 15px;
     color: $color-bg-light;
     cursor: pointer;
+    box-sizing: border-box;
 
     &:hover {
       background-color: $color-white;
@@ -153,8 +174,8 @@
     border-left: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     transform: rotate(-45deg);
-    margin-bottom: 4px;
     transition: $transition;
+    margin-bottom: 4px;
   }
 
   &__list {
@@ -164,7 +185,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    background-color: $color-bg-light;
+    background-color: #3d4050;
     border: 1px solid $color-primary;
     border-top: none;
     border-radius: 0 0 3px 3px;
@@ -174,7 +195,7 @@
 
   &__item {
     padding: 12px 15px;
-    @include text(18px, 400, $color-white);
+    @include text(16px, 400, $color-white);
     cursor: pointer;
     transition: $transition;
 
@@ -182,6 +203,12 @@
       color: $color-primary;
       background-color: rgba($color-white, 0.05);
     }
+  }
+
+  @include media-md {
+    flex: 0 0 auto;
+    height: $input-height;
+    max-width: 100%;
   }
 
   &--open {
