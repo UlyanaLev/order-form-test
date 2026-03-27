@@ -13,7 +13,7 @@
   }
 
   &__info {
-    @include flex;
+    @include flex(center, center, wrap);
     gap: 4px;
 
     p {
