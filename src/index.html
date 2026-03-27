@@ -13,7 +13,7 @@
       <div class="container">
         <div class="header__wrap">
           <a href="/" class="logo" aria-label="Главная">
-            LOREMIPSUM.<span>NET</span>
+            LOREMIPSUM.<span class="logo__accent">NET</span>
           </a>
 
           <nav class="navigation">
@@ -34,7 +34,7 @@
           </nav>
 
           <button type="button" class="burger" aria-label="Открыть меню">
-            <span></span>
+            <span class="burger__line"></span>
           </button>
         </div>
       </div>
@@ -42,24 +42,39 @@
 
     <main>
       <section class="banner" id="business">
-        <div class="container">
-          <div class="banner__content">
-            <h1 class="banner__title">
-              <span>Lorem ipsum</span> dolor sit amet consectetur
-              <span>adipiscing</span>
-            </h1>
-            <div class="banner__description">
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
-              <ul class="banner__list">
-                <li>Totam rem aperiam eaque ipsa</li>
-                <li>Sit voluptatem accusantium doloremque laudantium</li>
-                <li>Sed ut perspiciatis, unde omnis iste natus error</li>
-              </ul>
-            </div>
-            <div class="banner__actions">
-              <a href="#order" class="button button--primary">Заказать</a>
-              <a href="#about" class="button button--secondary">Подробнее</a>
-            </div>
+        <picture class="banner__bg">
+          <source srcset="./img/banner-bg.webp" type="image/webp" />
+          <img src="./img/banner-bg.jpg" alt="" role="presentation" />
+        </picture>
+
+        <div class="container banner__container">
+          <h1 class="banner__title">
+            <span class="banner__title-accent">Lorem ipsum</span> dolor sit amet
+            consectetur
+            <span class="banner__title-accent">adipiscing</span>
+          </h1>
+
+          <p class="banner__descr">
+            At vero eos et accusamus et iusto odio dignissimos ducimus!
+          </p>
+
+          <ul class="banner__list">
+            <li class="banner__item">Totam rem aperiam eaque ipsa</li>
+            <li class="banner__item">
+              Sit voluptatem accusantium doloremque laudantium
+            </li>
+            <li class="banner__item">
+              Sed ut perspiciatis, unde omnis iste natus error
+            </li>
+          </ul>
+
+          <div class="banner__actions">
+            <a href="#order" class="button button--primary button--small"
+              >Заказать</a
+            >
+            <a href="#about" class="button button--secondary button--small"
+              >Подробнее</a
+            >
           </div>
         </div>
       </section>
@@ -67,7 +82,9 @@
       <section class="order" id="order">
         <div class="container">
           <div class="order__text">
-            <h2 class="order__title">Оформление <span>заказа</span></h2>
+            <h2 class="order__title">
+              Оформление <span class="order__title-accent">заказа</span>
+            </h2>
             <p class="order__subtitle">
               Перед заполнением формы ознакомьтесь с нашей схемой работы!
             </p>
@@ -80,8 +97,8 @@
                   src="./img/search.svg"
                   alt="Поиск"
                   class="steps__icon"
-                  width="20"
-                  height="20"
+                  width="55"
+                  height="55"
                 />
               </div>
               <p class="steps__text">Lorem ipsum dolor sit amet</p>
@@ -92,8 +109,8 @@
                   src="./img/percent.svg"
                   alt="Процент"
                   class="steps__icon"
-                  width="20"
-                  height="20"
+                  width="55"
+                  height="55"
                 />
               </div>
               <p class="steps__text">Сonsectetur adipiscing elit</p>
@@ -104,8 +121,8 @@
                   src="./img/file.svg"
                   alt="Договор"
                   class="steps__icon"
-                  width="20"
-                  height="20"
+                  width="55"
+                  height="55"
                 />
               </div>
               <p class="steps__text">Sed do eiusmod tempor</p>
@@ -116,8 +133,8 @@
                   src="./img/message.svg"
                   alt="Сообщение"
                   class="steps__icon"
-                  width="20"
-                  height="20"
+                  width="55"
+                  height="55"
                 />
               </div>
               <p class="steps__text">Esse cillum dolore eu fugiat</p>
@@ -128,8 +145,8 @@
                   src="./img/money.svg"
                   alt="Оплата"
                   class="steps__icon"
-                  width="20"
-                  height="20"
+                  width="55"
+                  height="55"
                 />
               </div>
               <p class="steps__text">
@@ -189,12 +206,14 @@
             </div>
 
             <div class="form__bottom">
-              <div class="form__range-wrap">
-                <div class="form__range-info">
-                  <span class="form__range-text"
-                    >Sed ut perspiciatis, unde omnis iste natus</span
+              <div class="range-slider form__range-slider">
+                <div class="range-slider__info">
+                  <span class="range-slider__text">
+                    Sed ut perspiciatis, unde omnis iste natus
+                  </span>
+                  <span class="range-slider__percent" id="range-value"
+                    >75%</span
                   >
-                  <span class="form__range-percent" id="range-value">75%</span>
                 </div>
                 <input
                   type="range"
@@ -202,32 +221,38 @@
                   min="0"
                   max="100"
                   value="75"
-                  class="form__range"
+                  class="range-slider__input"
                   id="range-input"
                 />
               </div>
 
-              <div class="form__file">
+              <div class="file-upload form__file-upload">
                 <input
                   type="file"
                   name="file"
                   id="file-upload"
-                  class="form__file-input"
+                  class="file-upload__input"
                 />
-                <label for="file-upload" class="form__file-label">
+                <label
+                  for="file-upload"
+                  class="file-upload__label button button--secondary button--wide"
+                >
                   <img
                     src="./img/file-icon.svg"
                     alt=""
-                    class="form__file-icon"
+                    class="file-upload__icon"
                     width="20"
                     height="20"
                   />
-                  Прикрепить файл
+                  <span class="file-upload__text">Прикрепить файл</span>
                 </label>
               </div>
             </div>
 
-            <button type="submit" class="button button--submit">
+            <button
+              type="submit"
+              class="button button--primary button--wide button--submit"
+            >
               Отправить
             </button>
           </form>
@@ -239,12 +264,14 @@
       <div class="container">
         <div class="footer__wrap">
           <div class="footer__info">
-            <p class="footer__copy">© 2026 «LOREMIPSUM.NET»</p>
-            <p class="footer__copy">Все права защищены.</p>
+            <p class="footer__copy footer__copy--copyright">
+              © 2026 «LOREMIPSUM.NET»
+            </p>
+            <p class="footer__copy footer__copy--rights">Все права защищены.</p>
           </div>
 
           <div class="footer__payments">
-            <ul class="payment-list">
+            <ul class="payment-list footer__payment-list">
               <li class="payment-list__item payment-list__item--qiwi">
                 QIWI wallet
               </li>
