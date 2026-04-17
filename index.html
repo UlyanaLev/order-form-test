@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang=ru><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>LOREMIPSUM</title><link rel=stylesheet href=order-form-test.910f7b48.css><body>
+    <header class=header>
+      <div class=container>
+        <div class=header__wrap>
+          <a href=/ class=logo aria-label=Главная>
+            LOREMIPSUM.<span class=logo__accent>NET</span>
+          </a>
+
+          <nav class=navigation>
+            <ul class=navigation__list>
+              <li class=navigation__item>
+                <a href=#business class=navigation__link>Бизнес</a>
+              </li>
+              <li class=navigation__item>
+                <a href=#about class=navigation__link>О нас</a>
+              </li>
+              <li class=navigation__item>
+                <a href=#prices class=navigation__link>Цены</a>
+              </li>
+              <li class=navigation__item>
+                <a href=#order class=navigation__link>Оформить заказ</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type=button class=burger aria-label="Открыть меню">
+            <span class=burger__line></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class=banner id=business>
+        <div class=container>
+          <h1 class=banner__title>
+            <span class=banner__title-accent>Lorem ipsum</span> dolor sit amet
+            consectetur
+            <span class=banner__title-accent>adipiscing</span>
+          </h1>
+
+          <p class=banner__descr>
+            At vero eos et accusamus et iusto odio dignissimos ducimus!
+          </p>
+
+          <ul class=banner__list>
+            <li class=banner__item>Totam rem aperiam eaque ipsa</li>
+            <li class=banner__item>
+              Sit voluptatem accusantium doloremque laudantium
+            </li>
+            <li class=banner__item>
+              Sed ut perspiciatis, unde omnis iste natus error
+            </li>
+          </ul>
+
+          <div class=banner__actions>
+            <a href=#order class="button button--primary button--small">Заказать</a>
+            <a href=#about class="button button--secondary button--small">Подробнее</a>
+          </div>
+        </div>
+      </section>
+
+      <section class=order id=order>
+        <div class=container>
+          <div class=order__text>
+            <h2 class=order__title>
+              Оформление <span class=order__title-accent>заказа</span>
+            </h2>
+            <p class=order__subtitle>
+              Перед заполнением формы ознакомьтесь с нашей схемой работы!
+            </p>
+          </div>
+
+          <div class=steps>
+            <div class=steps__item>
+              <div class=steps__icon-wrapper>
+                <img src=search.4dc7a192.svg alt=Поиск class=steps__icon width=55 height=55>
+              </div>
+              <p class=steps__text>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class=steps__item>
+              <div class=steps__icon-wrapper>
+                <img src=percent.be7e3aaf.svg alt=Процент class=steps__icon width=55 height=55>
+              </div>
+              <p class=steps__text>Сonsectetur adipiscing elit</p>
+            </div>
+            <div class=steps__item>
+              <div class=steps__icon-wrapper>
+                <img src=file.50fe68e3.svg alt=Договор class=steps__icon width=55 height=55>
+              </div>
+              <p class=steps__text>Sed do eiusmod tempor</p>
+            </div>
+            <div class=steps__item>
+              <div class=steps__icon-wrapper>
+                <img src=message.5a68d9c1.svg alt=Сообщение class=steps__icon width=55 height=55>
+              </div>
+              <p class=steps__text>Esse cillum dolore eu fugiat</p>
+            </div>
+            <div class=steps__item>
+              <div class=steps__icon-wrapper>
+                <img src=money.ad605c0c.svg alt=Оплата class=steps__icon width=55 height=55>
+              </div>
+              <p class=steps__text>
+                Excepteur sint occaecat cupidatat non proident
+              </p>
+            </div>
+          </div>
+
+          <form action=# method=post class="form order__form">
+            <div class=form__row>
+              <div class=custom-select id=system-select role=listbox aria-label="Выбор типа системы">
+                <button type=button class=custom-select__header aria-expanded=false aria-haspopup=listbox>
+                  <span class=custom-select__current>Выберите тип системы</span>
+                  <span class=custom-select__icon></span>
+                </button>
+                <ul class=custom-select__list role=presentation>
+                  <li class=custom-select__item data-value=sed role=option>
+                    Sed ut perspiciatis
+                  </li>
+                  <li class=custom-select__item data-value=nemo role=option>
+                    Nemo enim ipsam
+                  </li>
+                  <li class=custom-select__item data-value=harum role=option>
+                    Et harum quidem
+                  </li>
+                  <li class=custom-select__item data-value=temporibus role=option>
+                    Temporibus autem
+                  </li>
+                  <li class=custom-select__item data-value=itaque role=option>
+                    Itaque earum rerum
+                  </li>
+                </ul>
+                <input type=hidden name=system_type id=system_type_input value>
+              </div>
+
+              <input type=email name=email class=form__input placeholder="Ваш e-mail" required>
+              <input name=username class=form__input placeholder="Ваше имя" required>
+            </div>
+
+            <div class=form__bottom>
+              <div class=range-slider>
+                <div class=range-slider__info>
+                  <span class=range-slider__text>
+                    Sed ut perspiciatis, unde omnis iste natus
+                  </span>
+                  <span class=range-slider__percent id=range-value>75%</span>
+                </div>
+                <input type=range name=range min=0 max=100 value=75 class=range-slider__input id=range-input>
+              </div>
+
+              <div class=file-upload>
+                <input type=file name=file id=file-upload class=file-upload__input>
+                <label for=file-upload class="button button--secondary button--wide file-upload__label">
+                  <img src=file-icon.fa96d523.svg alt class=file-upload__icon width=20 height=20>
+                  <span class=file-upload__text>Прикрепить файл</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="button button--primary button--submit button--wide form-submit">
+              Отправить
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class=footer>
+      <div class=container>
+        <div class=footer__wrap>
+          <div class=footer__info>
+            <p class="footer__copy footer__copy--copyright">
+              © 2026 «LOREMIPSUM.NET»
+            </p>
+            <p class="footer__copy footer__copy--rights">Все права защищены.</p>
+          </div>
+
+          <div class=footer__payments>
+            <ul class="footer__payment-list payment-list">
+              <li class="payment-list__item payment-list__item--qiwi">
+                QIWI wallet
+              </li>
+              <li class="payment-list__item payment-list__item--yandex">
+                Yandex Money
+              </li>
+              <li class="payment-list__item payment-list__item--wm">
+                Web Money
+              </li>
+            </ul>
+          </div>
+
+          <div class=footer__contacts>
+            <a href=mailto:info@loremipsum.net class="footer__link footer__link--email">info@ipsum228.com</a>
+            <a href=https://vk.com class="footer__link footer__link--vk" target=_blank rel="noopener noreferrer">Мы вконтакте</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src=order-form-test.b08db049.js defer></script>
+  
+
