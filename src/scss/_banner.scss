@@ -5,8 +5,8 @@
 
   &__title {
     max-width: 780px;
-    margin-bottom: 80px;
-    @include text(48px, 700, #000000);
+    margin-bottom: $spacing-2xl;
+    @include text(48px, 700, $color-dark-text);
     text-transform: uppercase;
     font-family: $font-main;
 
@@ -16,21 +16,21 @@
   }
 
   &__descr {
-    margin-bottom: 10px;
-    font-family: "Lato", sans-serif;
-    @include text(20px, 700, #000000);
+    margin-bottom: $spacing-xs;
+    font-family: $font-main;
+    @include text(20px, 700, $color-dark-text);
   }
 
   &__list {
-    margin-bottom: 80px;
+    margin-bottom: $spacing-2xl;
     list-style: none;
     padding: 0;
   }
 
   &__item {
     position: relative;
-    padding-left: 20px;
-    @include text(20px, 400, #000000);
+    padding-left: $spacing-md;
+    @include text(20px, 400, $color-dark-text);
 
     &::before {
       content: "-";
@@ -39,13 +39,13 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: $spacing-xs;
     }
   }
 
   &__actions {
-    display: flex;
-    gap: 30px;
+    @include flex(flex-start);
+    gap: $spacing-lg;
   }
 
   @include media-lg {
