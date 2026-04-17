@@ -12,15 +12,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1 1 190px;
-    max-width: 210px;
+    flex: 0 1 200px;
+    width: 100%;
 
     &:not(:last-child)::after {
       content: "";
       position: absolute;
       top: 50px;
-      left: calc(50% + 55px);
-      width: calc(110% - 110px);
+      left: calc(50% + 50px);
+      width: calc(100% - 70px);
       height: 6px;
       background-image: radial-gradient(circle, #c4c4c4 3px, transparent 3px);
       background-size: 25px 6px;
@@ -43,6 +43,7 @@
     position: relative;
     z-index: 2;
     box-sizing: border-box;
+    flex-shrink: 0;
   }
 
   &__icon {
@@ -53,17 +54,16 @@
 
   &__text {
     @include text(16px, 400, $color-white);
-    line-height: 1.2;
+    width: 100%;
+    word-wrap: break-word;
   }
 
   @include media-xl {
     gap: 40px 20px;
 
     &__item {
-      flex: 0 1 200px;
-
       &::after {
-        display: none !important;
+        display: none;
       }
     }
   }
