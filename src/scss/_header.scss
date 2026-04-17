@@ -9,7 +9,7 @@
   transition: $transition;
 
   &__wrap {
-    @include flex(space-between);
+    @include flex(space-between, center);
   }
 
   @include media-lg {
@@ -25,6 +25,7 @@
   color: $color-white;
   letter-spacing: 0.03em;
   text-decoration: none;
+  display: inline-block;
 
   &__accent {
     color: $color-secondary;
@@ -73,22 +74,23 @@
     padding: 100px 30px;
     transition: right 0.4s ease;
     overflow-y: auto;
+    z-index: 999;
 
     &--open {
       right: 0;
     }
 
-    & .navigation__list {
+    .navigation__list {
       flex-direction: column;
       gap: 30px;
       align-items: center;
     }
 
-    & .navigation__item:not(:first-child) {
+    .navigation__item:not(:first-child) {
       margin-left: 0;
     }
 
-    & .navigation__link {
+    .navigation__link {
       font-size: 16px;
     }
   }
@@ -104,8 +106,9 @@
   background: none;
   border: none;
   padding: 0;
+  outline: none;
 
-  span,
+  &__line,
   &::before,
   &::after {
     content: "";
@@ -121,8 +124,9 @@
     top: 0;
   }
 
-  span {
-    top: 9px;
+  &__line {
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &::after {
@@ -130,7 +134,7 @@
   }
 
   &--active {
-    span {
+    .burger__line {
       opacity: 0;
     }
     &::before {

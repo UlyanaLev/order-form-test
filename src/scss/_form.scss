@@ -2,21 +2,27 @@
   &__row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 30px;
     width: 100%;
+
+    @include media-md {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
   }
 
   &__input {
     @include form-el;
-    flex: 1 1 340px;
-    max-width: 370px;
-    height: $input-height;
+    width: 100%;
+    min-height: 48px;
     padding: 0 15px;
     color: $color-bg-light;
     box-sizing: border-box;
+    font-size: 18px;
 
     &::placeholder {
       color: $color-bg-light;
@@ -26,6 +32,11 @@
     &:focus {
       background-color: $color-white;
     }
+
+    @include media-md {
+      max-width: none;
+      flex: 1 1 auto;
+    }
   }
 
   &__bottom {
@@ -34,35 +45,16 @@
     align-items: flex-end;
     gap: 30px;
     margin-bottom: 25px;
-  }
+    width: 100%;
 
-  @include media-lg {
-    &__row {
-      gap: 20px;
-    }
-
-    &__bottom {
+    @include media-lg {
       flex-direction: column;
       align-items: center;
       gap: 30px;
     }
 
-    &__input {
-      flex: 1 1 340px;
-      max-width: 370px;
-    }
-  }
-
-  @include media-md {
-    &__row {
-      flex-direction: column;
-    }
-
-    &__input {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 100%;
-      height: $input-height;
+    @include media-md {
+      align-items: stretch;
     }
   }
 }
@@ -111,25 +103,34 @@
 
   @include media-lg {
     flex: 1 1 100%;
+    max-width: 100%;
     order: -1;
   }
 
   @include media-md {
-    max-width: 100%;
+    max-width: none;
   }
 }
 
 .file-upload {
   width: 100%;
   max-width: 370px;
+  min-height: 48px;
+  display: flex;
 
   &__input {
     display: none;
   }
 
   &__label {
-    width: 100%;
-    height: $input-height;
+    @include form-el;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin: 0;
+    cursor: pointer;
+    max-width: none;
   }
 
   &__icon {
@@ -138,30 +139,29 @@
   }
 
   @include media-md {
-    flex: 0 0 auto;
-    height: $input-height;
-    max-width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
   }
 }
 
 .custom-select {
   position: relative;
-  flex: 1 1 340px;
   width: 100%;
   max-width: 370px;
-  height: $input-height;
+  min-height: 48px;
 
   &__header {
+    @include form-el;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include form-el;
-    max-width: 100%;
-    height: 100%;
+    width: 100%;
+    min-height: 48px;
     padding: 0 15px;
     color: $color-bg-light;
     cursor: pointer;
     box-sizing: border-box;
+    max-width: none;
 
     &:hover {
       background-color: $color-white;
@@ -176,6 +176,7 @@
     transform: rotate(-45deg);
     transition: $transition;
     margin-bottom: 4px;
+    flex-shrink: 0;
   }
 
   &__list {
@@ -205,12 +206,6 @@
     }
   }
 
-  @include media-md {
-    flex: 0 0 auto;
-    height: $input-height;
-    max-width: 100%;
-  }
-
   &--open {
     .custom-select__list {
       display: block;
@@ -219,5 +214,10 @@
       transform: rotate(135deg);
       margin-bottom: -4px;
     }
+  }
+
+  @include media-md {
+    max-width: none;
+    flex: 1 1 auto;
   }
 }

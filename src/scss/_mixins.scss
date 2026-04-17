@@ -1,4 +1,4 @@
-// Медиазапросы (упрощенные)
+// Медиазапросы
 @mixin media-xl {
   @media (max-width: $xl) {
     @content;
@@ -36,7 +36,6 @@
   border-radius: 3px;
   border: 1px solid $color-white;
   background-color: rgba($color-white, 0.85);
-  font-size: 18px;
   transition: $transition;
   box-sizing: border-box;
   outline: none;

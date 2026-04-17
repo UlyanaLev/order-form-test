@@ -20,13 +20,11 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 20px;
   border: 1px solid transparent;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 600;
-  line-height: 1;
   cursor: pointer;
   transition: $transition;
   text-align: center;
@@ -56,24 +54,31 @@ body {
 
   &--small {
     min-width: 183px;
+    min-height: 43px;
+    padding: 0 10px;
   }
 
   &--wide {
-    min-width: 370px;
-    padding: 17px 30px;
+    width: 100%;
+    max-width: 370px;
+    min-height: 48px;
+    padding: 0 15px;
   }
 
   &--submit {
+    font-size: 15px;
+    margin: 40px auto 0;
     display: flex;
-    margin: 25px auto 0;
   }
 
   @include media-md {
     font-size: 12px;
-    min-width: 100%;
 
-    &--submit {
-      margin-top: 20px;
+    &--small,
+    &--wide {
+      width: 100%;
+      max-width: 100%;
+      min-height: 48px;
     }
   }
 }
