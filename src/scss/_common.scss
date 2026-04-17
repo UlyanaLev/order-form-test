@@ -31,6 +31,7 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   font-family: $font-main;
+  padding: 12px 20px;
 
   &--primary {
     background-color: $color-primary;
@@ -44,8 +45,8 @@ body {
 
   &--secondary {
     background-color: #ffffff;
-    color: #2a2b30;
-    border-color: #6f6d7b;
+    color: $color-text-dark;
+    border-color: $color-border;
 
     &:hover {
       background-color: darken(#ffffff, 5%);
@@ -53,22 +54,23 @@ body {
   }
 
   &--small {
-    min-width: 183px;
-    min-height: 43px;
-    padding: 0 10px;
+    width: 183px;
+    height: 43px;
+    padding: 0;
   }
 
   &--wide {
     width: 100%;
     max-width: 370px;
-    min-height: 48px;
-    padding: 0 15px;
+    padding: 14px 24px;
   }
 
   &--submit {
     font-size: 15px;
-    margin: 40px auto 0;
-    display: flex;
+
+    @include media-md {
+      font-size: 14px;
+    }
   }
 
   @include media-md {

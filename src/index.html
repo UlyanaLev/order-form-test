@@ -152,27 +152,27 @@
 
           <form action="#" method="POST" class="form order__form">
             <div class="form__row">
-              <div class="custom-select" id="system-select">
-                <button type="button" class="custom-select__header">
+              <div class="custom-select" id="system-select" role="listbox" aria-label="Выбор типа системы">
+                <button type="button" class="custom-select__header" aria-expanded="false" aria-haspopup="listbox">
                   <span class="custom-select__current"
                     >Выберите тип системы</span
                   >
                   <span class="custom-select__icon"></span>
                 </button>
-                <ul class="custom-select__list">
-                  <li class="custom-select__item" data-value="sed">
+                <ul class="custom-select__list" role="presentation">
+                  <li class="custom-select__item" data-value="sed" role="option">
                     Sed ut perspiciatis
                   </li>
-                  <li class="custom-select__item" data-value="nemo">
+                  <li class="custom-select__item" data-value="nemo" role="option">
                     Nemo enim ipsam
                   </li>
-                  <li class="custom-select__item" data-value="nemo">
+                  <li class="custom-select__item" data-value="harum" role="option">
                     Et harum quidem
                   </li>
-                  <li class="custom-select__item" data-value="nemo">
+                  <li class="custom-select__item" data-value="temporibus" role="option">
                     Temporibus autem
                   </li>
-                  <li class="custom-select__item" data-value="nemo">
+                  <li class="custom-select__item" data-value="itaque" role="option">
                     Itaque earum rerum
                   </li>
                 </ul>
@@ -246,7 +246,7 @@
 
             <button
               type="submit"
-              class="button button--primary button--wide button--submit"
+              class="button button--primary button--wide button--submit form-submit"
             >
               Отправить
             </button>
