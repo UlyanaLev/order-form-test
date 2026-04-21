@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (this.burger && this.nav) {
         this.burger.addEventListener("click", () => this.toggle());
-        this.navLinks.forEach(link => link.addEventListener("click", () => this.close()));
+        this.navLinks.forEach((link) =>
+          link.addEventListener("click", () => this.close()),
+        );
       }
     },
 
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.burger.classList.toggle("burger--active", isOpen);
       this.nav.classList.toggle("navigation--open", isOpen);
       this.body.classList.toggle("no-scroll", isOpen);
-    }
+    },
   };
 
   // Custom Select Module
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.currentIndex = -1;
         this.isOpen = false;
 
-        this.selectItems.forEach(item => item.setAttribute("tabindex", "-1"));
+        this.selectItems.forEach((item) => item.setAttribute("tabindex", "-1"));
         this.bindEvents();
       }
     },
@@ -55,8 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
     bindEvents() {
       this.select.addEventListener("click", (e) => this.handleClick(e));
       this.select.addEventListener("keydown", (e) => this.handleKeydown(e));
-      this.handleClickOutside = (e) => this.handleClickOutside(e);
-      document.addEventListener("click", this.handleClickOutside);
+
+      // Привязываем контекст this с помощью стрелочной функции
+      this.boundHandleClickOutside = (e) => {
+        if (!this.select.contains(e.target)) {
+          this.close();
+        }
+      };
+
+      document.addEventListener("click", this.boundHandleClickOutside);
     },
 
     handleClick(e) {
@@ -95,11 +104,17 @@ document.addEventListener("DOMContentLoaded", () => {
     handleNavigation(e) {
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        const nextIndex = this.currentIndex < this.selectItemsArray.length - 1 ? this.currentIndex + 1 : 0;
+        const nextIndex =
+          this.currentIndex < this.selectItemsArray.length - 1
+            ? this.currentIndex + 1
+            : 0;
         this.highlightItem(nextIndex);
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        const prevIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.selectItemsArray.length - 1;
+        const prevIndex =
+          this.currentIndex > 0
+            ? this.currentIndex - 1
+            : this.selectItemsArray.length - 1;
         this.highlightItem(prevIndex);
       } else if (e.key === "Home") {
         e.preventDefault();
@@ -107,12 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (e.key === "End") {
         e.preventDefault();
         this.highlightItem(this.selectItemsArray.length - 1);
-      }
-    },
-
-    handleClickOutside(e) {
-      if (!this.select.contains(e.target)) {
-        this.close();
       }
     },
 
@@ -139,7 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     highlightItem(index) {
       if (index < 0 || index >= this.selectItemsArray.length) return;
-      this.selectItemsArray.forEach(item => item.classList.remove("custom-select__item--active"));
+      this.selectItemsArray.forEach((item) =>
+        item.classList.remove("custom-select__item--active"),
+      );
       this.selectItemsArray[index].classList.add("custom-select__item--active");
       this.selectItemsArray[index].focus();
       this.currentIndex = index;
@@ -149,8 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
       this.currentText.textContent = item.textContent.trim();
       if (this.hiddenInput) this.hiddenInput.value = item.dataset.value;
       this.currentIndex = this.selectItemsArray.indexOf(item);
+      this.highlightItem(this.currentIndex);
       this.close();
-    }
+    },
   };
 
   // Range Slider Module
@@ -166,13 +178,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateValue() {
       this.rangeValue.textContent = `${this.rangeInput.value}%`;
-    }
+    },
   };
 
   // Smooth Scroll Module
   const SmoothScroll = {
     init() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", (e) => this.handleClick(e, anchor));
       });
     },
@@ -186,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }
+    },
   };
 
   // Form Handler Module
@@ -201,14 +213,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     validate() {
-      const requiredFields = [
-        'input[name="email"]',
-        'input[name="username"]'
-      ];
+      const requiredFields = ['input[name="email"]', 'input[name="username"]'];
 
       let isValid = true;
 
-      requiredFields.forEach(selector => {
+      requiredFields.forEach((selector) => {
         const field = this.form.querySelector(selector);
         if (field && !field.value.trim()) {
           isValid = false;
@@ -233,8 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(this.form);
       const data = Object.fromEntries(formData);
       console.log("Данные формы:", data);
-      // Здесь можно добавить отправку на сервер
-    }
+    },
   };
 
   // Initialize all modules
