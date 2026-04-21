@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=ru><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>LOREMIPSUM</title><link rel=stylesheet href=order-form-test.910f7b48.css><body>
+<!DOCTYPE html><html lang=ru><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>LOREMIPSUM</title><link rel=stylesheet href=order-form-test.b89e5ea8.css><body>
     <header class=header>
       <div class=container>
         <div class=header__wrap>
@@ -108,12 +108,12 @@
 
           <form action=# method=post class="form order__form">
             <div class=form__row>
-              <div class=custom-select id=system-select role=listbox aria-label="Выбор типа системы">
-                <button type=button class=custom-select__header aria-expanded=false aria-haspopup=listbox>
+              <div class=custom-select id=system-select role=combobox aria-label="Выбор типа системы" aria-haspopup=listbox aria-expanded=false aria-owns=system-select-list>
+                <button type=button class=custom-select__header aria-expanded=false aria-haspopup=listbox aria-controls=system-select-list>
                   <span class=custom-select__current>Выберите тип системы</span>
                   <span class=custom-select__icon></span>
                 </button>
-                <ul class=custom-select__list role=presentation>
+                <ul class=custom-select__list role=listbox id=system-select-list>
                   <li class=custom-select__item data-value=sed role=option>
                     Sed ut perspiciatis
                   </li>
@@ -197,6 +197,6 @@
       </div>
     </footer>
 
-    <script src=order-form-test.b08db049.js defer></script>
+    <script src=order-form-test.2efc332b.js defer></script>
   
 
