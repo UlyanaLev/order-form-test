@@ -212,6 +212,21 @@
       color: $color-primary;
       background-color: $color-white-05;
     }
+
+    &--active {
+      color: $color-primary;
+      background-color: $color-white-05;
+    }
+  }
+
+  &--open {
+    .custom-select__list {
+      display: block;
+    }
+
+    .custom-select__icon {
+      transform: rotate(135deg);
+    }
   }
 
   @include media-md {

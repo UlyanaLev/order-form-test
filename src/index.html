@@ -152,14 +152,14 @@
 
           <form action="#" method="POST" class="form order__form">
             <div class="form__row">
-              <div class="custom-select" id="system-select" role="listbox" aria-label="Выбор типа системы">
-                <button type="button" class="custom-select__header" aria-expanded="false" aria-haspopup="listbox">
+              <div class="custom-select" id="system-select" role="combobox" aria-label="Выбор типа системы" aria-haspopup="listbox" aria-expanded="false" aria-owns="system-select-list">
+                <button type="button" class="custom-select__header" aria-expanded="false" aria-haspopup="listbox" aria-controls="system-select-list">
                   <span class="custom-select__current"
                     >Выберите тип системы</span
                   >
                   <span class="custom-select__icon"></span>
                 </button>
-                <ul class="custom-select__list" role="presentation">
+                <ul class="custom-select__list" role="listbox" id="system-select-list">
                   <li class="custom-select__item" data-value="sed" role="option">
                     Sed ut perspiciatis
                   </li>
